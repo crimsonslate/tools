@@ -1,7 +1,7 @@
 [project]
 name = "crimsonslate-tools"
 description = "Django project dev tools by crimsonslate"
-version = "1.0.0"
+version = "1.0.1"
 readme = { file = "README.md", content-type = "text/markdown" }
 requires-python = ">=3.13"
 authors = [
@@ -74,3 +74,10 @@ indent-style = "space"
 line-ending = "auto"
 quote-style = "double"
 skip-magic-trailing-comma = false
+
+[dependency-groups]
+dev = [
+    "autoclasstoc>=1.7.0",
+    "sphinx>=8.2.3",
+    "sphinx-rtd-theme>=3.0.2",
+]

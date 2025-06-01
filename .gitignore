@@ -8,3 +8,5 @@ wheels/
 .venv
 .python-version
 .env
+*.sqlite3
+docs/build/
