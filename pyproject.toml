@@ -5,8 +5,8 @@ version = "2.0.0"
 readme = { file = "README.md", content-type = "text/markdown" }
 requires-python = ">=3.14"
 authors = [
-    { name = "Blake Nall", email = "dev@darthnall.com" },
-    { name = "Constantine Kapatos", email = "kapatos.constantine@gmail.com" },
+    { name = "Blake Nall", email = "blake@crimsonslate.com" },
+    { name = "Kosta Kapatos", email = "kosta@crimsonslate.com" },
 
 ]
 classifiers = [
@@ -20,7 +20,6 @@ dependencies = ["django>=6.0.1"]
 [project.urls]
 Homepage = "https://github.com/crimsonslate/tools"
 Repository = "https://github.com/crimsonslate/tools"
-Documentation = "https://crimsonslate-tools.readthedocs.io/en/latest"
 
 [build-system]
 requires = ["hatchling"]
@@ -66,6 +65,3 @@ indent-style = "space"
 line-ending = "auto"
 quote-style = "double"
 skip-magic-trailing-comma = false
-
-[dependency-groups]
-dev = ["autoclasstoc>=1.7.0", "sphinx>=8.2.3", "sphinx-rtd-theme>=3.0.2"]
