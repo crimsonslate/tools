@@ -2,20 +2,16 @@ from django.views.generic.base import TemplateResponseMixin
 
 
 class HtmxTemplateResponseMixin(TemplateResponseMixin):
-    """Renders :py:attr:`partial_template_name` instead of :py:attr:`template_name` when an htmx request is received."""
+    """Renders :py:attr:`partial_name` instead of :py:attr:`template_name` when on htmx request."""
 
-    partial_template_name: str | None = None
-    """A partial template to be rendered instead of :py:attr:`template_name` on htmx request."""
+    partial_name: str | None = None
 
     def render_to_response(self, context, **response_kwargs):
-        """Checks the request headers and updates the view's :py:attr:`template_name`."""
         htmx_request = bool(self.request.headers.get("HX-Request"))
         boosted = bool(self.request.headers.get("HX-Boosted"))
 
-        if self.partial_template_name and htmx_request and not boosted:
-            self.template_name = (
-                self.partial_template_name
-                if self.partial_template_name is not None
-                else f"{self.template_name}#partial"
-            )
+        if htmx_request and not boosted:
+            if not self.partial_name:
+                self.partial_name = f"{self.template_name}#main"
+            self.template_name = self.partial_name
         return super().render_to_response(context, **response_kwargs)

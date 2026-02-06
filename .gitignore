@@ -9,3 +9,5 @@ wheels/
 .env
 *.sqlite3
 docs/build/
+.coverage
+htmlcov/
